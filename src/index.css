@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Warm, earthy wellness palette */
+    --background: 40 33% 97%;
+    --foreground: 100 15% 15%;
+
+    --card: 40 30% 99%;
+    --card-foreground: 100 15% 15%;
+
+    --popover: 40 30% 99%;
+    --popover-foreground: 100 15% 15%;
+
+    /* Deep forest green */
+    --primary: 110 25% 28%;
+    --primary-foreground: 40 40% 97%;
+
+    /* Warm tan */
+    --secondary: 35 35% 88%;
+    --secondary-foreground: 100 20% 18%;
+
+    --muted: 38 25% 92%;
+    --muted-foreground: 90 10% 38%;
+
+    /* Sage accent */
+    --accent: 95 25% 75%;
+    --accent-foreground: 100 25% 18%;
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 40 40% 97%;
+
+    --border: 38 25% 85%;
+    --input: 38 25% 85%;
+    --ring: 110 25% 28%;
+
+    --radius: 0.75rem;
+
+    /* Wellness-specific tokens */
+    --terracotta: 18 45% 55%;
+    --sage: 95 22% 60%;
+    --cream: 40 45% 94%;
+    --moss: 100 20% 22%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(40 45% 94%) 0%, hsl(35 35% 88%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(110 25% 28% / 0.85) 0%, hsl(100 30% 20% / 0.9) 100%);
+    --gradient-leaf: linear-gradient(180deg, hsl(95 25% 75% / 0.3) 0%, hsl(40 33% 97%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(100 20% 22% / 0.08);
+    --shadow-elegant: 0 10px 40px -10px hsl(110 25% 28% / 0.18);
+    --shadow-warm: 0 8px 30px -8px hsl(18 45% 55% / 0.2);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .image-placeholder {
+    @apply relative overflow-hidden bg-gradient-warm flex items-center justify-center text-muted-foreground;
+    background-image:
+      radial-gradient(circle at 30% 30%, hsl(var(--sage) / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, hsl(var(--terracotta) / 0.15) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--secondary)) 100%);
+  }
+}
