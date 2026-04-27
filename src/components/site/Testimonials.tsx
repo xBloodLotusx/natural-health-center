@@ -3,27 +3,18 @@ import { Quote, Star } from "lucide-react";
 const reviews = [
   {
     quote:
-      "After years of chronic back pain, I finally feel like myself again. The team listened, explained everything, and built a plan just for me.",
-    name: "Sarah M.",
-    location: "Madison Heights, VA",
+      "I thank God everyday that he sent me to Lina! She has been a great inspiration and has spoken the word of God over my life. I firmly believe that I am still here today because of her help through God's Spirit. Thank you Jesus and Thank you Lina!",
+    name: "Brush Brothers",
   },
   {
     quote:
-      "The office is calm and welcoming, and every staff member is genuinely kind. My massage therapist is incredible — I leave feeling brand new.",
-    name: "James T.",
-    location: "Lynchburg, VA",
+      "I love this Holistic Health Store! I've been going for years and they are so helpful and knowledgeable! I always recommend this place to everyone!",
+    name: "Leeann",
   },
   {
     quote:
-      "I felt better after just one visit. They take the time to actually understand what's going on and never rush you. Highly recommend.",
-    name: "Linda P.",
-    location: "Amherst, VA",
-  },
-  {
-    quote:
-      "Tension headaches that bothered me for years are finally gone. Their natural, holistic approach has truly changed my quality of life.",
-    name: "Marcus W.",
-    location: "Madison Heights, VA",
+      "I was so happy to have gotten in 5 minutes before they closed, and was able to get what I needed and get out in about 3 minutes! Minutes! The service was great and I will be back!",
+    name: "Monica Parson",
   },
 ];
 
@@ -40,7 +31,7 @@ export const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {reviews.map((r) => (
             <figure
               key={r.name}
@@ -60,7 +51,6 @@ export const Testimonials = () => {
               </blockquote>
               <figcaption className="mt-6 pt-5 border-t border-border/60">
                 <div className="font-semibold text-primary">{r.name}</div>
-                <div className="text-sm text-muted-foreground">{r.location}</div>
               </figcaption>
             </figure>
           ))}

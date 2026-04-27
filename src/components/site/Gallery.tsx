@@ -1,12 +1,11 @@
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import naturalAisle from "@/assets/natural-aisle.jpg";
+import naturalEntrance from "@/assets/natural-health-entrance.png";
+import naturalOnly from "@/assets/natural-health-natural-only.jpg";
 
 const photos = [
-  { label: "Treatment Room", aspect: "aspect-[4/5]" },
-  { label: "Massage Therapy", aspect: "aspect-square" },
-  { label: "Chiropractic Adjustment", aspect: "aspect-[4/5]" },
-  { label: "Reception Area", aspect: "aspect-square" },
-  { label: "Wellness Lounge", aspect: "aspect-[4/5]" },
-  { label: "Friendly Staff", aspect: "aspect-square" },
+  { src: naturalEntrance, label: "Our Storefront", aspect: "aspect-[4/5]" },
+  { src: naturalAisle, label: "Product Aisle", aspect: "aspect-square" },
+  { src: naturalOnly, label: "Natural Products", aspect: "aspect-[4/5]" },
 ];
 
 export const Gallery = () => {
@@ -22,14 +21,15 @@ export const Gallery = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {photos.map((p, i) => (
-            <ImagePlaceholder
-              key={i}
-              label={p.label}
-              aspect={p.aspect}
-              className="hover:shadow-warm transition-smooth"
-            />
+            <div key={i} className={`${p.aspect} w-full rounded-2xl overflow-hidden shadow-soft hover:shadow-warm transition-smooth`}>
+              <img
+                src={p.src}
+                alt={p.label}
+                className="w-full h-full object-cover"
+              />
+            </div>
           ))}
         </div>
       </div>
